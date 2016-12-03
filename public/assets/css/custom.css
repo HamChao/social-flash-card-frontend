@@ -33,4 +33,16 @@ div.answer-panel {
 }
 .card {
   width: 285px;
+  margin: 0 auto;
+}
+.columns.is-multiline {
+  justify-content: center;
+}
+#deck-name-input {
+  //margin-bottom: 30px;
+  max-width: 20em;
+  text-align: center;
+}
+.card-text-input {
+  text-align: center;
 }
