@@ -9,3 +9,5 @@ npm install
 npm run dev
 ```
 
+## Backend Repo
+https://github.com/trus-sangwarn/social-flash-card-api
