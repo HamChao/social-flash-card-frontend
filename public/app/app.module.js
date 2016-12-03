@@ -32,10 +32,9 @@ angular.module('app', [
     // before controllers and services are built
     envServiceProvider.check();
   })
-  .run(function($rootScope, $state, $cookies, envService) {
+  .run(function($rootScope, $state, $cookies, envService, $http) {
     console.log(envService.read('test'));
-
-    $rootScope.currentUser = $cookies.get('Session');
+    $rootScope.currentUser = $cookies.get('accessToken');
     // console.log($cookies.get('ParseSession'));
     $rootScope.$on('$stateChangeStart', function(event, toState, toParams) {
       var requireLogin = toState.data.requireLogin;
@@ -45,7 +44,7 @@ angular.module('app', [
         $state.go(toState.redirectTo, toParams, { location: 'replace' })
       }
       // Check authen
-      if (requireLogin && !$cookies.get('Session')) {
+      if (requireLogin && !$cookies.get('accessToken')) {
         event.preventDefault();
         $state.go('login', {})
       }

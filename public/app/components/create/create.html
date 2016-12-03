@@ -5,30 +5,46 @@
     justify-content: center;
     min-height: 10em;
 }
+
 </style>
 <navbar></navbar>
-<div class="container" style="text-align: center;">
-  <h1 class="title" align="center">Deck Name</h1>
-  <div class="columns" style="justify-content: center;">
-      <div class="column" style="flex-grow: 0">
-          <div class="card">
-              <div class="card-content">
-                  <p class="title is-5">A Word</p>
-              </div>
-          </div>
-      </div>
-      <div class="column" style="flex-grow: 0">
-          <div class="card">
-              <div class="card-content" style="min-height: 10em;">
-                  <p class="title is-5">Definition</p>
-              </div>
-          </div>
-      </div>
-  </div>
-  <div>
-    <a class="btn" style="font-size: 3em;" href="#"><i class="fa fa-plus-circle"></i></a>
-  </div>
-  <div>
-    <a class="button">Finish</a>
-  </div>
+<section class="hero has-text-centered">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title is-2">
+                Create
+            </h1>
+        </div>
+    </div>
+</section>
+<div class="divider"></div>
+<div class="container">
+    <form ng-submit="create.save(create.deck)">
+        <div class="container" style="text-align: center;">
+            <h1 class="title" align="center">Deck Name</h1>
+            <div class="columns" style="justify-content: center;" ng-repeat="card in create.deck.cards track by $index">
+                <div class="column" style="flex-grow: 0">
+                    <div class="card">
+                        <div class="card-content">
+                            <input ng-model="card.front">
+                        </div>
+                    </div>
+                </div>
+                <div class="column" style="flex-grow: 0">
+                    <div class="card">
+                        <div class="card-content" style="min-height: 10em;">
+                            <input ng-model="card.back">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <a class="btn btn-plus" ng-click="create.add()"><i class="fa fa-plus-circle"></i></a>
+            </div>
+            <div>
+                <button type="submit" class="button">Save</button>
+            </div>
+        </div>
+    </form>
 </div>
+

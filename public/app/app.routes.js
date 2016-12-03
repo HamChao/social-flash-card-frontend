@@ -41,6 +41,13 @@
               requireLogin: false,
             },
           })
+          .state('user', {
+            url: '/user?:id',
+            template: '<user></user>',
+            data: {
+              requireLogin: false,
+            },
+          })
 
         $locationProvider.html5Mode(true);
       }

@@ -1,43 +1,57 @@
 <navbar></navbar>
-<div class="tabs is-centered is-large">
-    <ul>
-        <li ng-click="home.setPage(1)" ng-class="{ 'is-active': home.pageSelect === 1 }">
-            <a>
-                <span class="icon is-small"><i class="fa fa-image"></i></span>
-                <span>Feed</span>
-            </a>
-        </li>
-        <li ng-click="home.setPage(2)" ng-class="{ 'is-active': home.pageSelect === 2 }">
-            <a>
-                <span class="icon is-small"><i class="fa fa-music"></i></span>
-                <span>My Card</span>
-            </a>
-        </li>
-    </ul>
-</div>
-<div class="columns is-multiline">
-    <div class="column" ng-repeat="deck in home.currDecks" style="flex-grow: 0">
-        <div class="card">
-            <div class="card-content">
-                <div class="media">
-                    <div class="media-left">
-                        <figure class="image is-32x32">
-                            <img src="http://placehold.it/64x64" alt="Image">
-                        </figure>
+<section class="hero has-text-centered">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title is-2">
+                Welcome
+            </h1>
+            <h2 class="subtitle is-3">
+                Social Flash Card
+            </h2>
+        </div>
+    </div>
+</section>
+<div class="container">
+    <div class="divider"></div>
+    <div class="tabs is-centered is-large">
+        <ul>
+            <li ng-click="home.setPage(1)" ng-class="{ 'is-active': home.pageSelect === 1 }">
+                <a>
+                    <span class="icon is-small"><i class="fa fa-image"></i></span>
+                    <span>Feed</span>
+                </a>
+            </li>
+            <li ng-click="home.setPage(2)" ng-class="{ 'is-active': home.pageSelect === 2 }">
+                <a>
+                    <span class="icon is-small"><i class="fa fa-music"></i></span>
+                    <span>My Card</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="columns is-multiline">
+        <div class="column" ng-repeat="deck in home.currDecks" style="flex-grow: 0">
+            <div class="card">
+                <div class="card-content">
+                    <div class="media">
+                        <div class="media-left">
+                            <figure class="image is-32x32">
+                                <img src="http://placehold.it/64x64" alt="Image">
+                            </figure>
+                        </div>
+                        <div class="media-content">
+                            <p class="title is-5">{{ '@' + deck.author }}</p>
+                        </div>
                     </div>
-                    <div class="media-content">
-                        <p class="title is-5">{{ '@' + deck.author }}</p>
-                    </div>
-                </div>
-                <div class="content title">
-                    <a ui-sref="view({ id: deck.objectId })">
+                    <div class="content title">
+                        <a ui-sref="view({ id: deck.objectId })">
                       {{ deck.name }}
                     </a>
-                    <br>
-                    <small>11:09 PM - 1 Jan 2016</small>
+                        <br>
+                        <small>11:09 PM - 1 Jan 2016</small>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-

@@ -2,6 +2,9 @@
   font-size: 48px;
   line-height: 140px;
 }
-.divider{
+.divider {
   margin-top: 40px;
+}
+.btn.btn-plus {
+  font-size: 3em;
 }

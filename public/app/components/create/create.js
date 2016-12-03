@@ -10,6 +10,22 @@
         '$cookies',
         '$state',
         function($scope, $location, $cookies, $state) {
+          const emptyCard = {
+            front: '',
+            back: '',
+          }
+
+          this.deck = {
+            cards: [emptyCard]
+          }
+
+          this.add = (newItem = { front: '', back: '' }) => {
+            this.deck.cards.push(newItem)
+          }
+
+          this.save = (deck) => {
+            console.log(deck);
+          }
         }
       ]
     });
