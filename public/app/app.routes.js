@@ -15,7 +15,7 @@
           })
           .state('login', {
             url: '/login',
-            templateUrl: 'app/shares/login.html',
+            template: '<login></login>',
             data: {
               requireLogin: false,
             },
