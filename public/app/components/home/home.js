@@ -11,8 +11,9 @@
         '$state',
         function($scope, $location, $cookies, $state) {
           this.pageSelect = 1;
-          this.decks = [
+          this.feedDecks = [
             {
+              objectId: '01',
               name: 'Something',
               cards: [
                 {
@@ -23,6 +24,53 @@
               author: 'Trus',
             },
             {
+              objectId: '02',
+              name: 'Something2',
+              cards: [
+                {
+                  front: 'foo',
+                  back: 'bar',
+                },
+              ],
+              author: 'Ham',
+            }
+          ];
+          this.myDecks = [
+            {
+              objectId: '01',
+              name: 'Something',
+              cards: [
+                {
+                  front: 'foo',
+                  back: 'bar',
+                },
+              ],
+              author: 'Trus',
+            },
+            {
+              objectId: '02',
+              name: 'Something',
+              cards: [
+                {
+                  front: 'foo',
+                  back: 'bar',
+                },
+              ],
+              author: 'Trus',
+            },
+            {
+              objectId: '03',
+              name: 'Something',
+              cards: [
+                {
+                  front: 'foo',
+                  back: 'bar',
+                },
+              ],
+              author: 'Trus',
+            },
+            {
+              objectId: '04',
               name: 'Something2',
               cards: [
                 {
@@ -34,7 +82,11 @@
             }
           ];
 
-          this.setPage = (page) => this.pageSelect = page;
+          this.currDecks = this.feedDecks;
+          this.setPage = (page) => {
+            this.pageSelect = page;
+            this.currDecks = page === 1 ? this.feedDecks : this.myDecks;
+          }
         }
       ]
     });

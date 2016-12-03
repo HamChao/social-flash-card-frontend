@@ -7,7 +7,7 @@
       function config($stateProvider, $locationProvider) {
         $stateProvider
           .state('home', {
-            url: '/:nav',
+            url: '/',
             template: '<home></home>',
             data: {
               requireLogin: false,
@@ -16,6 +16,27 @@
           .state('login', {
             url: '/login',
             templateUrl: 'app/shares/login.html',
+            data: {
+              requireLogin: false,
+            },
+          })
+          .state('view', {
+            url: '/view?:id',
+            template: '<view></view>',
+            data: {
+              requireLogin: false,
+            },
+          })
+          .state('memorize', {
+            url: '/memorize?:id',
+            template: '<memorize></memorize>',
+            data: {
+              requireLogin: false,
+            },
+          })
+          .state('create', {
+            url: '/create?:id',
+            template: '<create></create>',
             data: {
               requireLogin: false,
             },
