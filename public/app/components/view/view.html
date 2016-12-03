@@ -1,1 +1,84 @@
 <navbar></navbar>
+<section class="hero has-text-centered">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title">
+                Primary bold title
+            </h1>
+            <h2 class="subtitle">
+                Primary bold subtitle
+            </h2>
+        </div>
+    </div>
+</section>
+<div class="divider"></div>
+<div class="container">
+    <div class="columns">
+        <div class="column">
+            <a ng-click="view.like()" class="button is-large">
+                <span class="icon is-medium">
+              <i class="fa fa-heart-o"></i>
+            </span>
+                <span>Like</span>
+            </a>
+            <a ng-click="view.save()" class="button is-large">
+                <span class="icon is-medium">
+              <i class="fa fa-bookmark-o"></i>
+            </span>
+                <span>Save</span>
+            </a>
+            <a ng-click="view.learn()" class="button is-large">
+                <span class="icon is-medium">
+              <i class="fa fa-book"></i>
+            </span>
+                <span>Learn</span>
+            </a>
+            <a ng-click="view.share()" class="button is-large">
+                <span class="icon is-medium">
+              <i class="fa fa-share-alt"></i>
+            </span>
+                <span>Share</span>
+            </a>
+        </div>
+        <div class="column">
+            <nav class="level">
+                <div class="level-item has-text-centered">
+                    <p class="heading">Likes</p>
+                    <p class="title">3,456</p>
+                </div>
+                <div class="level-item has-text-centered">
+                    <p class="heading">Saves</p>
+                    <p class="title">123</p>
+                </div>
+                <div class="level-item has-text-centered">
+                    <p class="heading">Learns</p>
+                    <p class="title">456K</p>
+                </div>
+                <div class="level-item has-text-centered">
+                    <p class="heading">Shares</p>
+                    <p class="title">789</p>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div class="divider"></div>
+    <div class="columns">
+        <div class="column is-half">
+            <!-- <div class="column" ng-repeat="deck in home.currDecks" style="flex-grow: 0"> -->
+            <div class="card is-fullwidth ">
+                <div class="card-content title has-text-centered">
+                    <p class="card-context">context</p>
+                </div>
+            </div>
+        </div>
+        <div class="column is-half">
+            <!-- <div class="column" ng-repeat="deck in home.currDecks" style="flex-grow: 0"> -->
+            <div class="card is-fullwidth ">
+                <div class="card-content title has-text-centered">
+                    <p class="card-context">context</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
