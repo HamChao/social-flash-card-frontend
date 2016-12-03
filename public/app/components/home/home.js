@@ -14,6 +14,8 @@
         function($scope, $location, $cookies, $state, $http, $rootScope) {
           const accessToken = $rootScope.currentUser
 
+          this.isLogin = !!$rootScope.currentUser
+          console.log(this.isLogin)
           this.pageSelect = 1
 
           this.feedDecks = [{
