@@ -15,10 +15,20 @@
           this.deck = {
             objectId: '01',
             name: 'Something',
-            cards: [{
+            cards: [
+            {
               front: 'foo',
               back: 'bar',
-            }, ],
+            }, {
+              front: 'foo',
+              back: 'bar',
+            }, {
+              front: 'foo',
+              back: 'bar',
+            }, {
+              front: 'foo',
+              back: 'bar',
+            }],
             author: 'Trus',
           }
 

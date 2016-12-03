@@ -2,10 +2,10 @@
 <section class="hero has-text-centered">
     <div class="hero-body">
         <div class="container">
-            <h1 class="title">
+            <h1 class="title is-2">
                 {{ view.deck.name }}
             </h1>
-            <h2 class="subtitle">
+            <h2 class="subtitle is-3">
                 by {{ view.deck.author }}
             </h2>
         </div>
@@ -62,12 +62,12 @@
         </div>
     </div>
     <div class="divider"></div>
-    <div class="columns">
+    <div class="columns" ng-repeat="card in view.deck.cards">
         <div class="column is-half">
             <!-- <div class="column" ng-repeat="deck in home.currDecks" style="flex-grow: 0"> -->
             <div class="card is-fullwidth ">
                 <div class="card-content title has-text-centered">
-                    <p class="card-context">context</p>
+                    <p class="card-context">{{ card.front }}</p>
                 </div>
             </div>
         </div>
@@ -75,7 +75,7 @@
             <!-- <div class="column" ng-repeat="deck in home.currDecks" style="flex-grow: 0"> -->
             <div class="card is-fullwidth ">
                 <div class="card-content title has-text-centered">
-                    <p class="card-context">context</p>
+                    <p class="card-context">{{ card.back }}</p>
                 </div>
             </div>
         </div>
