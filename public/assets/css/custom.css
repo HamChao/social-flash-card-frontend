@@ -29,5 +29,8 @@ div.answer-panel {
   margin: 1em auto;
 }
 #memorize-container div.answer-panel .btn {
-    flex-grow: 1;
+  flex-grow: 1;
+}
+.card {
+  width: 285px;
 }
