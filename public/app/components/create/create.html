@@ -22,6 +22,7 @@
     <form ng-submit="create.save(create.deck)">
         <div class="container" style="text-align: center;">
             <h1 class="title" align="center">Deck Name</h1>
+            <input type="text" ng-model="create.deck.name" style="margin-bottom: 30px">
             <div class="columns" style="justify-content: center;" ng-repeat="card in create.deck.cards track by $index">
                 <div class="column" style="flex-grow: 0">
                     <div class="card">

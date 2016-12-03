@@ -30,7 +30,7 @@
         </ul>
     </div>
     <div class="columns is-multiline">
-        <div class="column" ng-repeat="deck in home.currDecks" style="flex-grow: 0">
+        <div class="column" ng-repeat="deck in home.currDecks track by $index" style="flex-grow: 0">
             <div class="card">
                 <div class="card-content">
                     <div class="media">
@@ -44,7 +44,7 @@
                         </div>
                     </div>
                     <div class="content title">
-                        <a ui-sref="view({ id: deck.objectId })">
+                        <a ui-sref="view({ id: deck._id })">
                       {{ deck.name }}
                     </a>
                         <br>

@@ -9,47 +9,30 @@
         '$location',
         '$cookies',
         '$state',
-        ($scope, $location, $cookies, $state) => {
-        //   const path = $location.url();
-        //   $scope.navbar.isHideMenu = () => {
-        //     if (path === '/login') {
-        //       return true;
-        //     }
-        //     return false;
-        //   }
+        '$rootScope',
+        '$http',
+        function($scope, $location, $cookies, $state, $rootScope, $http) {
+          const accessToken = $rootScope.currentUser
+          this.isLogin = !!accessToken
+          this.user = { name: 'Username' }
 
-        //   // Active stuffs
-        //   const homeStates = [
-        //     'home',
-        //     'home-header',
-        //     'home-header-edit',
-        //     'home-middle',
-        //     'home-middle-edit',
-        //     'home-footer',
-        //     'home-footer-edit',
-        //   ];
-        //   const promotionStates = [
-        //     'promotion',
-        //     'promotion-edit',
-        //     'promotion-category',
-        //     'promotion-category-edit',
-        //   ];
-        //   const partnerStates = [
-        //     'partner',
-        //     'partner-edit',
-        //     'partner-coupon',
-        //     'partner-coupon-edit',
-        //   ];
+          $http({
+              method: 'GET',
+              url: 'https://social-flash-card.herokuapp.com/api/user/me',
+              headers: {
+                'X-Access-Token': accessToken,
+              },
+            })
+            .then((response) => {
+              this.user = response.data
+            })
 
-        //   // Flag to check does it need to be active
-        //   $scope.navbar.isActiveHome = homeStates.includes($state.current.name);
-        //   $scope.navbar.isActivePromotion = promotionStates.includes($state.current.name);
-        //   $scope.navbar.isActivePartner = partnerStates.includes($state.current.name);
 
-        //   $scope.navbar.logout = () => {
-        //     Parse.User.logOut();
-        //     $location.url('/login');
-        //   }
+          this.logout = () => {
+            $cookies.remove('accessToken')
+            $state.go('home')
+            this.isLogin = null
+          }
         }
       ]
     });

@@ -9,13 +9,16 @@
         '$location',
         '$cookies',
         '$state',
-        function($scope, $location, $cookies, $state) {
+        '$http',
+        '$rootScope',
+        function($scope, $location, $cookies, $state, $http, $rootScope) {
           const emptyCard = {
             front: '',
             back: '',
           }
 
           this.deck = {
+            name: '',
             cards: [emptyCard]
           }
 
@@ -25,6 +28,19 @@
 
           this.save = (deck) => {
             console.log(deck);
+            $http({
+                method: 'POST',
+                url: 'https://social-flash-card.herokuapp.com/api/deck/',
+                headers: {
+                  'X-Access-Token': $rootScope.currentUser,
+                },
+                data: JSON.stringify(deck),
+              })
+              .then((response) => {
+                console.log(response)
+                this.deck = response.data;
+              })
+
           }
         }
       ]

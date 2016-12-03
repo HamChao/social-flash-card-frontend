@@ -24,6 +24,7 @@
               console.log('work!')
               $cookies.put('accessToken',response.data.accessToken)
               console.log($cookies.get('accessToken'))
+              $state.go('home')
             })
           }
         }

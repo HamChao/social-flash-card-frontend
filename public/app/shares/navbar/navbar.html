@@ -29,15 +29,18 @@
             <a class="nav-item" href="#">
                 Documentation
             </a>
-            <a class="nav-item" ui-sref="user">
-                User
+            <a ng-show="navbar.isLogin" class="nav-item" ui-sref="user">
+                {{ navbar.user.name }}
             </a>
             <span class="nav-item">
                 <a class="button" ui-sref="create">
                     <span>Create</span>
                 </a>
-                <a class="button is-primary" ui-sref="login">
+                <a ng-hide="navbar.isLogin" class="button is-primary" ui-sref="login">
                     <span>Login</span>
+                </a>
+                <a ng-show="navbar.isLogin" class="button is-primary" ng-click="navbar.logout()">
+                    <span>Logout</span>
                 </a>
             </span>
         </div>
