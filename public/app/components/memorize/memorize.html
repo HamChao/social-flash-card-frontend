@@ -9,30 +9,45 @@
     </div>
 </section>
 <div class="divider"></div>
-<div class="container" id="memorize-container" style="text-align: center;">
+<div class="container" id="memorize-container" style="text-align: center;" ng-show="memorize.isFound">
   <table class="table">
     <tbody>
       <tr>
         <td>Remaining</td>
-        <td>10</td>
+        <td>{{ memorize.remainCount }}</td>
       </tr>
       <tr>
         <td>Correct</td>
-        <td>7</td>
+        <td>{{ memorize.correctCards.length }}</td>
       </tr>
       <tr>
         <td>Incorrect</td>
-        <td>3</td>
+        <td>{{ memorize.incorrectCards.length }}</td>
       </tr>
     </tbody>
   </table>
   <div class="card">
     <div class="card-content flash-card">
-      <p class="title is-5">A Word</p>
+      <p class="title is-5">{{ memorize.selectCard.front }}</p>
     </div>
   </div>
   <div class="answer-panel">
-    <a class="btn" style="font-size: 3em;" href="#"><i class="fa fa-check-circle"></i></a>
-    <a class="btn" style="font-size: 3em;" href="#"><i class="fa fa-times-circle"></i></a>
+    <a ng-click="memorize.correct(memorize.selectCard)" class="btn" style="font-size: 3em;"><i class="fa fa-check-circle"></i></a>
+    <a ng-click="memorize.incorrect(memorize.selectCard)" class="btn" style="font-size: 3em;"><i class="fa fa-times-circle"></i></a>
   </div>
 </div>
+<!-- <flippy
+    flip="['custom:FLIP_EVENT_IN']"
+    flip-back="['custom:FLIP_EVENT_OUT']"
+    duration="800"
+    timing-function="ease-in-out">
+
+       <flippy-front>
+          <img src="http://placehold.it/300x300&text=Im the front" alt="the front" />
+        </flippy-front>
+
+        <flippy-back>
+          <img src="http://placehold.it/300x300&text=Aaaaaand the back" alt="the back" />
+        </flippy-back>
+</flippy>
+ -->

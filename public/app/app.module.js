@@ -2,6 +2,7 @@ angular.module('app', [
     'ui.router',
     'environment',
     'ngCookies',
+    'angular-flippy',
   ])
   .config(function(envServiceProvider) {
     // set the domains and variables for each environment
