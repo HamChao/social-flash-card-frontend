@@ -7,8 +7,8 @@
       function config($stateProvider, $locationProvider) {
         $stateProvider
           .state('home', {
-            url: '/',
-            templateUrl: 'app/components/home/home.html',
+            url: '/:nav',
+            template: '<home></home>',
             data: {
               requireLogin: false,
             },
