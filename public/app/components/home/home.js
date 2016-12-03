@@ -19,7 +19,8 @@
                   front: 'foo',
                   back: 'bar',
                 },
-              ]
+              ],
+              author: 'Trus',
             },
             {
               name: 'Something2',
@@ -28,7 +29,8 @@
                   front: 'foo',
                   back: 'bar',
                 },
-              ]
+              ],
+              author: 'Ham',
             }
           ];
 
