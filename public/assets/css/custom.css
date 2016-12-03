@@ -5,3 +5,26 @@
 .divider{
   margin-top: 40px;
 }
+.card-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 10em;
+}
+#memorize-container .card {
+  margin: 0 auto;
+}
+#memorize-container table {
+  max-width: 15em;
+  margin: 1em auto;
+}
+div.answer-panel {
+  display: flex;
+  max-width: 100%;
+  position: relative;
+  width: 300px;
+  margin: 1em auto;
+}
+#memorize-container div.answer-panel .btn {
+    flex-grow: 1;
+}
